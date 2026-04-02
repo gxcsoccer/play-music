@@ -15,15 +15,11 @@
 ## 安装
 
 ```bash
-# 前置依赖
+# 前置依赖（macOS）
 brew install mpv
 
-# 安装 play-music
-git clone https://github.com/gxcsoccer/play-music.git
-cd play-music
-npm install
-npm run build
-npm link
+# 安装
+npm install -g tingge
 ```
 
 ## 使用
@@ -110,7 +106,18 @@ $ play-music status --json
 
 ## 作为 Claude Code Skill 使用
 
-项目已包含 `.claude/commands/play-music.md`，在 Claude Code 中可直接使用：
+一键配置 Skill + Statusline + 权限：
+
+```bash
+ting claude
+```
+
+这会自动完成：
+- 安装 Skill 到 `~/.claude/skills/ting/`，支持 `/ting` 命令和自然语言触发
+- 安装 Statusline 脚本，编码时底栏实时显示当前播放
+- 添加 `Bash(ting *)` 权限，免确认执行播放控制
+
+配置完成后重启 Claude Code，即可直接使用：
 
 ```
 > 放首周杰伦的歌
@@ -118,31 +125,10 @@ $ play-music status --json
 > 现在在放什么
 ```
 
-Claude Code 会自动调用 `play-music` 命令完成操作。
-
-### Statusline 集成
-
-将 `scripts/statusline.sh` 配置到 Claude Code 的 statusline，编码时底栏实时显示当前播放状态：
-
-```
-Opus 4.6 | ctx 23% | ♪ 晴天 - 周杰伦 |
-```
-
-配置方法：
+卸载：
 
 ```bash
-cp scripts/statusline.sh ~/.claude/statusline.sh
-```
-
-在 `~/.claude/settings.json` 中添加：
-
-```json
-{
-  "statusLine": {
-    "type": "command",
-    "command": "~/.claude/statusline.sh"
-  }
-}
+ting claude --uninstall
 ```
 
 ## 性能
