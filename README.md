@@ -2,6 +2,8 @@
 
 一个 AI 友好的命令行音乐搜索、播放、下载工具。支持网易云、QQ音乐、酷狗、酷我四大平台，可作为 Claude Code skill 使用，在 vibe coding 时随时来一首。
 
+![demo](docs/demo.gif)
+
 ## 特性
 
 - **四大音乐源** — 网易云、QQ音乐、酷狗、酷我，并发搜索，智能换源
@@ -11,6 +13,8 @@
 - **歌词同步** — 播放时实时滚动显示 LRC 歌词
 - **下载** — 支持 MP3/FLAC 下载到本地
 - **Statusline** — 集成 Claude Code statusline，编码时底栏显示当前播放
+
+![statusline](docs/statusline.png)
 
 ## 安装
 
